@@ -17,7 +17,7 @@ rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
 resource.setrlimit(resource.RLIMIT_NOFILE, (20480, rlimit[1]))
 
 import time
-from gpu_free import get_gpu_info
+# from gpu_free import get_gpu_info
 
 @ex.automain
 def main(_config):
