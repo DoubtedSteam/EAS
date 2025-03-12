@@ -3,7 +3,9 @@ export CUDA_VISIBLE_DEVICES=0,1,2,3
 
 torchrun --nproc_per_node 4 --master_port 11114 \
     llava/train/train_mem.py \
-    --pia_enable True --pia_r 128 --mm_projector_lr 2e-5 --router_lr 2e-4 \
+    --mm_projector_lr 4e-4 \
+    --adapt_dim 128 \
+    --replaced_dim 128 \
     --deepspeed ./scripts/zero2.json \
     --model_name_or_path liuhaotian/llava-v1.5-7b \
     --vision_tower openai/clip-vit-large-patch14-336 \
