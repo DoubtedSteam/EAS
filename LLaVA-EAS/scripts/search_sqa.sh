@@ -6,7 +6,9 @@ export TRANSFORMERS_OFFLINE=1
 
 torchrun --nproc_per_node 4 --master_port 11113 \
     llava/train/train_mem.py \
-    --mm_projector_lr 2e-4 \
+    --mm_projector_lr 4e-4 \
+    --adapt_dim 128 \
+    --replaced_dim 256 \
     --deepspeed ./scripts/zero2.json \
     --model_name_or_path lmsys/vicuna-7b-v1.3 \
     --version v1 \
