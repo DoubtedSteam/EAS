@@ -5,7 +5,7 @@ torchrun --nproc_per_node 4 --master_port 11113 \
     llava/train/train_mem.py \
     --mm_projector_lr 4e-4 \
     --adapt_dim 128 \
-    --replaced_dim 256 \
+    --replaced_dim 128 \
     --deepspeed ./scripts/zero2.json \
     --model_name_or_path liuhaotian/llava-v1.5-7b \
     --vision_tower openai/clip-vit-large-patch14-336 \
